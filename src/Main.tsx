@@ -11,7 +11,7 @@
 import React from 'react';
 
 import {Provider as PaperProvider} from 'react-native-paper';
-import Theme from './utils/theme.config';
+import Theme from './config/theme';
 import CustomAppNavigation from './Navigation';
 
 declare const global: {HermesInternal: null | {}};
