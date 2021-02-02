@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "600632949684",
+    "project_id": "carlist-74e7d",
+    "storage_bucket": "carlist-74e7d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600632949684:android:f41e2dc4d24801c463d0e1",
+        "android_client_info": {
+          "package_name": "com.cardata"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600632949684-babssuash58lcut793hbeqqs9u5h4bc9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3WWiw90kBKc8YcwYibgGJ8jff68HqboA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600632949684-babssuash58lcut793hbeqqs9u5h4bc9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "600632949684-o38v2p6atb2hgpur0nk1o6luo50jgdfc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dev.cardata"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

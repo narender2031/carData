@@ -1,5 +1,7 @@
 apply plugin: "com.android.application"
 apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 import com.android.build.OutputFile
 
@@ -135,6 +137,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     splits {
         abi {
@@ -184,8 +187,9 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
+    implementation platform('com.google.firebase:firebase-bom:26.4.0')
     implementation "com.facebook.react:react-native:+"  // From node_modules
-
+    implementation 'com.google.firebase:firebase-analytics'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     addUnimodulesDependencies([exclude: ['expo-app-loader-provider', 'expo-file-system', 'unimodules-barcode-scanner-interface', 'unimodules-camera-interface', 'unimodules-face-detector-interface', 'unimodules-file-system-interface', 'unimodules-sensors-interface', 'unimodules-task-manager-interface']])
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
