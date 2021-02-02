@@ -4,16 +4,17 @@ import {Card} from 'react-native-paper';
 
 type CarListProps = {
   item: {
-    title: String;
-    id: String;
+    image: String,
+    createdAt: Date,
+    updatedAt: Date,
   };
 };
 
 const CarList: React.FunctionComponent<CarListProps> = ({item}) => {
   return (
     <Card style={styles.cardConatiner}>
-      <Card.Cover source={{uri: 'https://picsum.photos/700'}} />
-      <Card.Title title={item.title} subtitle="Card Subtitle" />
+      <Card.Cover source={{uri: item.image}} />
+      <Card.Title subtitle={new Intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'long' }).format(item.createdAt)} />
     </Card>
   );
 };

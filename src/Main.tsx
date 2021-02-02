@@ -13,13 +13,16 @@ import React from 'react';
 import {Provider as PaperProvider} from 'react-native-paper';
 import Theme from './config/theme';
 import CustomAppNavigation from './Navigation';
+import AwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 declare const global: {HermesInternal: null | {}};
 
 const Mian = () => {
   return (
     <>
-      <PaperProvider theme={Theme}>
+      <PaperProvider theme={Theme} settings={{
+        icon: props => <AwesomeIcon  {...props} />
+      }}>
         <CustomAppNavigation />
       </PaperProvider>
     </>

@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {View, Text, SafeAreaView, StyleSheet, FlatList} from 'react-native';
-import {FAB} from 'react-native-paper';
+import {View, SafeAreaView, StyleSheet, FlatList} from 'react-native';
+import {FAB, Colors} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 import {navigationRoute} from '../../constants/navigatiomn';
-
+import firestore from '@react-native-firebase/firestore';
 import CarList from './CarList';
 
 const DATA = [
@@ -24,6 +24,25 @@ const DATA = [
 export default function Home() {
   const [carImages, setCarImages] = React.useState(DATA);
   const navigation = useNavigation();
+
+  React.useEffect(() => {
+    const subscriber = firestore().collection('cars').onSnapshot(documentSnapshot => {
+      const list: any[] = [];
+
+      documentSnapshot.forEach(data => {
+        let finalResult = data.data();
+        let formattedData = {
+          image: finalResult.image,
+          createdAt: finalResult.createdAt.toDate(),
+          updatedAt: finalResult.updatedAt.toDate(),
+        }
+        list.push(formattedData)
+      });
+
+      setCarImages(list)
+    })
+    return () => subscriber();
+  }, [])
   return (
     <SafeAreaView>
       <View style={styles.conatiner}>
@@ -32,12 +51,14 @@ export default function Home() {
           renderItem={({item}) => {
             return <CarList item={item} />;
           }}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(_item, index) => `${index}`}
         />
         <FAB
           style={styles.fab}
           label={'Add'}
+          icon="plus"
           small
+          color={Colors.purple500}
           onPress={() => navigation.navigate(navigationRoute.ADD_CAR)}
         />
       </View>
