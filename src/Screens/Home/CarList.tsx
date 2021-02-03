@@ -10,11 +10,12 @@ type CarListProps = {
   };
 };
 
+const timeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 const CarList: React.FunctionComponent<CarListProps> = ({item}) => {
   return (
     <Card style={styles.cardConatiner}>
       <Card.Cover source={{uri: item.image}} />
-      <Card.Title subtitle={new Intl.DateTimeFormat('en-GB', { dateStyle: 'full', timeStyle: 'long' }).format(item.createdAt)} />
+      <Card.Title subtitle={new Intl.DateTimeFormat('en-US', timeFormatOptions).format(item.createdAt)} />
     </Card>
   );
 };
