@@ -17,5 +17,13 @@ module.exports = {
         allowUndefined: true,
       },
     ],
+    [
+      'module-resolver',
+      {
+        alias: {
+          '@': './src',
+        },
+      },
+    ],
   ],
 };

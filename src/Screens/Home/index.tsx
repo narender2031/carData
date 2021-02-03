@@ -2,27 +2,12 @@ import * as React from 'react';
 import {View, SafeAreaView, StyleSheet, FlatList} from 'react-native';
 import {FAB, Colors} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
-import {navigationRoute} from '../../constants/navigatiomn';
+import {navigationRoute} from '@/constants/navigatiomn';
 import firestore from '@react-native-firebase/firestore';
 import CarList from './CarList';
 
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-];
-
 export default function Home() {
-  const [carImages, setCarImages] = React.useState(DATA);
+  const [carImages, setCarImages] = React.useState([]);
   const navigation = useNavigation();
 
   React.useEffect(() => {

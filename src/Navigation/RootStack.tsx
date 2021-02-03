@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeStack from './HomeStack';
-import {navigationRoute} from '../constants/navigatiomn';
+import {navigationRoute} from '@/constants/navigatiomn';
 
 export default function RootStack() {
   const Stack = createStackNavigator();

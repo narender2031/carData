@@ -3,10 +3,10 @@ import {SafeAreaView, StyleSheet, View} from 'react-native';
 import {Card, Button, ActivityIndicator, Colors} from 'react-native-paper';
 import ImagePicker from 'react-native-image-crop-picker';
 import UploadedImage from './UploadedImage';
-import uploadimage from '../../services/uploadImage';
+import uploadimage from '@/services/uploadImage';
 import ConfirmationDialog from './ConfirmationDialog';
 import { useNavigation } from '@react-navigation/native';
-import addCarData from '../../services/createImageData';
+import addCarData from '@/services/createImageData';
 
 type AddCarPropsType = {};
 

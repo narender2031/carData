@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from '../Screens/Home';
-import AddCarScreen from '../Screens/AddCar';
-import {navigationRoute} from '../constants/navigatiomn';
+import HomeScreen from '@/Screens/Home';
+import AddCarScreen from '@/Screens/AddCar';
+import {navigationRoute} from '@/constants/navigatiomn';
 
 export default function HomeStack() {
   const Stack = createStackNavigator();
