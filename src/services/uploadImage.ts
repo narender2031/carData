@@ -6,6 +6,18 @@ type uploadImageParamsType = {
   path: string,
 };
 
+/**
+ * This function is used to upload images to firebase storage.
+ * It returns the string URL.
+ * 
+ * @param image
+ * 
+ * @function
+ * 
+ * @return {url} 
+ * 
+ */
+
 export default async function uploadImage(image: uploadImageParamsType) {
   try {
     const reference = await storage().ref(image.filename);
