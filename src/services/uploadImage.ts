@@ -20,10 +20,12 @@ type uploadImageParamsType = {
 
 export default async function uploadImage(image: uploadImageParamsType) {
   try {
-    const reference = await storage().ref(image.filename);
+    const fileName = image.filename ? image.filename : `IMG-${new Date()}`;
+    const reference = await storage().ref(fileName);
     await reference.putFile(image.path);
-    let url = await storage().ref(image.filename).getDownloadURL()
+    let url = await storage().ref(fileName).getDownloadURL()
 
+    console.info('Image is uploaded :)')
     return url;
   } catch (e) {
     throw new Error('Failed to upload file')

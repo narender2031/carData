@@ -64,7 +64,6 @@ const AddCar: React.FunctionComponent<AddCarPropsType> = () => {
     } catch (error) {
       setShowDialog(true);
       setMessage('Image is not uploaded! Please try Again :)');
-      console.log(error)
     }
   }
 
