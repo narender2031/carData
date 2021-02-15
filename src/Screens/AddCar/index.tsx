@@ -45,7 +45,7 @@ const AddCar: React.FunctionComponent<AddCarPropsType> = () => {
     }
   }
 
-  const upload = async () => {
+  const upload = async (imagePath: any) => {
     try {
     setShowLoader(true)
      let url =  await uploadimage(imagePath)
@@ -69,10 +69,13 @@ const AddCar: React.FunctionComponent<AddCarPropsType> = () => {
 
   const hanldeClose = () => {
     setShowDialog(false);
-    navigation.navigate('Home')
   }
 
-  
+  const updateImage = (image: any) => {
+    setImagePath(image)
+    setShowDialog(true);
+    setMessage('Your Image is updated now, Please upload now');
+  }
 
   return (
     <SafeAreaView>
@@ -80,12 +83,12 @@ const AddCar: React.FunctionComponent<AddCarPropsType> = () => {
         <Card>
           <Card.Content>
             <View style={styles.filed}>
-              <UploadedImage image={imagePath} />
+              <UploadedImage image={imagePath}  onsaveImage={updateImage}/>
             </View>
             <View style={styles.filed}>
               <Button icon="folder" onPress={getImpage}>upload image form Gallery</Button>
               <Button icon="camera" onPress={getImpageCamera}>upload Image from camera</Button>
-              <Button icon="upload" mode='contained' onPress={upload}>
+              <Button icon="upload" mode='contained' onPress={() => upload(imagePath)}>
                 {showLoader ? (
                   <ActivityIndicator animating={true} color={Colors.white}/>
                 ): 'Add Car'}

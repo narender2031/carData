@@ -669,6 +669,8 @@ PODS:
     - React-Core
   - RNScreens (2.17.1):
     - React-Core
+  - RNSketchCanvas (0.8.9):
+    - React
   - RNVectorIcons (8.0.0):
     - React-Core
   - TOCropViewController (2.6.0)
@@ -749,6 +751,7 @@ DEPENDENCIES:
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - "RNSketchCanvas (from `../node_modules/@kichiyaki/react-native-sketch-canvas`)"
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - UMAppLoader (from `../node_modules/unimodules-app-loader/ios`)
   - UMConstantsInterface (from `../node_modules/unimodules-constants-interface/ios`)
@@ -871,6 +874,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSketchCanvas:
+    :path: "../node_modules/@kichiyaki/react-native-sketch-canvas"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   UMAppLoader:
@@ -960,6 +965,7 @@ SPEC CHECKSUMS:
   RNImageCropPicker: 08ba3a2e2f4f8833d606f01906c371e382c4dea9
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: b6c9607e6fe47c1b6e2f1910d2acd46dd7ecea3a
+  RNSketchCanvas: 9e68797b76b48cc0bbc8f5c0e5938ea8bd690df5
   RNVectorIcons: f67a1abce2ec73e62fe4606e8110e95a832bc859
   TOCropViewController: 3105367e808b7d3d886a74ff59bf4804e7d3ab38
   UMAppLoader: 92d044af52626af3d81a69796ad666fc7a9a7d78
