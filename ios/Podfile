@@ -1,11 +1,10 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
-require_relative '../node_modules/react-native-unimodules/cocoapods.rb'
+
 
 platform :ios, '11.0'
 
 target 'carData' do
-  use_unimodules!(exclude: ['expo-app-loader-provider', 'expo-file-system', 'unimodules-barcode-scanner-interface', 'unimodules-camera-interface', 'unimodules-face-detector-interface', 'unimodules-sensors-interface', 'unimodules-task-manager-interface'])
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
@@ -23,7 +22,7 @@ target 'carData' do
   pod 'Firebase/Analytics'
   # add pods for any other desired Firebase products
   # https://firebase.google.com/docs/ios/setup#available-pods
-  use_flipper!
+  use_flipper!({ 'Flipper-Folly' => '2.3.0' })
   post_install do |installer|
     flipper_post_install(installer)
   end

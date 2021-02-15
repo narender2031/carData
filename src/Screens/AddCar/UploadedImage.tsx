@@ -40,6 +40,7 @@ const UploadedImage: React.FunctionComponent<UploadedImageProps> = ({
             localSourceImage={{
               filename: image.path,
               directory: '',
+              mode: 'ScaleToFill'
             }}
             onSketchSaved={loadImagePath}
             saveComponent={
